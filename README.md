@@ -36,6 +36,22 @@ Antes de nos aprofundarmos em mais detalhes sobre a criptografia totalmente homo
    * O conceito de par de chaves é fundamental na criptografia de chave pública (Public-key encryption), ou também conhecido como criptografia assíncrona. Um par de chaves consiste em duas chaves: uma chave pública e uma chave privada. A chave pública é usada para criptografar dados, enquanto a chave privada é utilizada para descriptografar esses dados. Essa abordagem garante que apenas o proprietário da chave privada possa acessar os dados criptografados.
 3. **Computação em Dados Criptografados**:
    * Quando um servidor precisa realizar computações em dados criptografados, ele utiliza um processo chamado Avaliação (Evaluation). A Avaliação permite que o servidor execute operações sobre dados criptografados sem a necessidade de descriptografá-los primeiro. Isso é possível graças às propriedades matemáticas da FHE, que preservam a estrutura dos dados durante as operações, mantendo-os protegidos.
+4. Esquemas de FHE
+   * Em FHE, os esquemas referem-se a modelos específicos que utilizam diferentes métodos matemáticos para implementar a criptografia homomórfica. Esses esquemas são essenciais para permitir que operações sejam realizadas sobre dados criptografados. Os mais conhecidos e utilizados incluem:
+     * Brakerski/Fan-Vercauteren (BFV) e Brakerski-Gentry-Vaikuntanathan (BGV):
+       * Esquemas utilizados para operações com números inteiros.
+     * Cheon-Kim-Kim-Song (CKKS):
+       * O CKKS é particularmente útil para operações de aritmética aproximada, o que o torna adequado para aplicações em aprendizado de máquina e análise de dados.
+     * Fast Fully Homomorphic Encryption Library over the Torus (TFHE):
+       * A biblioteca TFHE implementa um bootstrapping porta a porta muito rápido.
+5. Bootstraping
+   * Na criptografia totalmente homomórfica (FHE), o conceito de bootstrapping desempenha um papel crucial. O principal uso do bootstrapping é converter um texto cifrado esgotado em um texto cifrado atualizado "equivalente". Para entender melhor essa função, é importante conhecer alguns detalhes sobre os textos cifrados e o ruído acumulado durante as operações.
+     1. **Texto Cifrado Esgotado**:
+        * Quando se realizam operações homomórficas em textos cifrados, cada operação adiciona um certo nível de ruído ao texto cifrado. Após várias operações, o ruído acumulado pode se tornar tão alto que o texto cifrado se torna inutilizável para futuras operações adicionais. Esse estado é conhecido como texto cifrado esgotado.
+     2. **Texto Cifrado Atualizado**:
+        * Um texto cifrado atualizado é um texto cifrado que foi "limpo" do ruído acumulado e pode suportar operações homomórficas adicionais. O processo de atualizar um texto cifrado esgotado envolve reduzir o nível de ruído para permitir futuras operações.
+     3. **Bootstrapping**:
+        * O bootstrapping é a técnica utilizada para renovar um texto cifrado esgotado. Esse processo envolve descriptografar parcialmente o texto cifrado utilizando a própria criptografia homomórfica, e depois recriptografar o resultado, removendo assim o ruído acumulado. O texto cifrado resultante é funcionalmente equivalente ao original, mas com um nível reduzido de ruído, permitindo que mais operações sejam realizadas.
 
 Esses pontos formam a base para entender como a FHE funciona e como ela pode ser aplicada em diversas áreas para proteger a privacidade e a segurança dos dados.
 
@@ -50,6 +66,5 @@ Para melhor aproveitamento deste "manual", recomenda-se conhecimento prévio em:
   * Anéis
   * Lattices
 * Algebra booleana
-* Problema de aprendizado por erros (Learn With Errors Problem, LWE)
 
 Nas próximas páginas, iremos nos aprofundar mais nos conceitos matemáticos, bibliotecas e programação (em C++), e mais para frente construir uma aplicação utilizando a biblioteca [OpenFHE](https://github.com/openfheorg/openfhe-development) utilizando o esquema BFV, BGV e logo após utilizando CKKS.
