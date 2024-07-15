@@ -69,4 +69,4 @@ Para melhor aproveitamento deste "manual", recomenda-se conhecimento prévio em:
   * Lattices
 * Algebra booleana
 
-Nas próximas páginas, iremos nos aprofundar mais nos conceitos matemáticos, bibliotecas e programação (em C++), e mais para frente construir uma aplicação utilizando a biblioteca [OpenFHE](https://github.com/openfheorg/openfhe-development) utilizando o esquema BFV, BGV e logo após utilizando CKKS.
+Nas próximas páginas, iremos nos aprofundar mais nos conceitos matemáticos, bibliotecas e programação (em C++), e mais para frente construir uma aplicação utilizando a biblioteca [OpenFHE](https://github.com/openfheorg/openfhe-development) utilizando os esquemas BFV, BGV e logo após utilizando CKKS.
