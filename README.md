@@ -39,4 +39,17 @@ Antes de nos aprofundarmos em mais detalhes sobre a criptografia totalmente homo
 
 Esses pontos formam a base para entender como a FHE funciona e como ela pode ser aplicada em diversas áreas para proteger a privacidade e a segurança dos dados.
 
+### Requisitos
+
+Para melhor aproveitamento deste "manual", recomenda-se conhecimento prévio em:
+
+* Criptografia tradicional (pelo menos completo entendimento sobre RSA)
+* Algebra abstrata
+  * Homomorfismos
+  * Grupos
+  * Anéis
+  * Lattices
+* Algebra booleana
+* Problema de aprendizado por erros (Learn With Errors Problem, LWE)
+
 Nas próximas páginas, iremos nos aprofundar mais nos conceitos matemáticos, bibliotecas e programação (em C++), e mais para frente construir uma aplicação utilizando a biblioteca [OpenFHE](https://github.com/openfheorg/openfhe-development) utilizando o esquema BFV, BGV e logo após utilizando CKKS.
