@@ -18,7 +18,7 @@ Somente o proprietário dos dados, que possui a chave secreta, pode descriptogra
 
 Para mais detalhes, o artigo original de Craig Gentry pode ser acessado [aqui](https://crypto.stanford.edu/craig/craig-thesis.pdf).
 
-### **Aplicações Reais da Criptografia Totalmente Homomórfica (FHE)**
+## **Aplicações Reais da Criptografia Totalmente Homomórfica (FHE)**
 
 A criptografia totalmente homomórfica (FHE) oferece uma solução promissora para diversos desafios de segurança e privacidade em várias áreas. Algumas das aplicações reais do FHE incluem:
 
@@ -28,6 +28,8 @@ A criptografia totalmente homomórfica (FHE) oferece uma solução promissora pa
 
 Essas aplicações destacam o potencial da FHE em transformar a forma como dados sensíveis são manipulados e protegidos, oferecendo soluções robustas para desafios contemporâneos de segurança e privacidade.
 
+## Alguns conceitos fundamentais
+
 Antes de nos aprofundarmos em mais detalhes sobre a criptografia totalmente homomórfica (FHE), é essencial compreender alguns conceitos fundamentais:
 
 1. **Circuitos na Criptografia**:
@@ -36,7 +38,7 @@ Antes de nos aprofundarmos em mais detalhes sobre a criptografia totalmente homo
    * O conceito de par de chaves é fundamental na criptografia de chave pública (Public-key encryption), ou também conhecido como criptografia assíncrona. Um par de chaves consiste em duas chaves: uma chave pública e uma chave privada. A chave pública é usada para criptografar dados, enquanto a chave privada é utilizada para descriptografar esses dados. Essa abordagem garante que apenas o proprietário da chave privada possa acessar os dados criptografados.
 3. **Computação em Dados Criptografados**:
    * Quando um servidor precisa realizar computações em dados criptografados, ele utiliza um processo chamado Avaliação (Evaluation). A Avaliação permite que o servidor execute operações sobre dados criptografados sem a necessidade de descriptografá-los primeiro. Isso é possível graças às propriedades matemáticas da FHE, que preservam a estrutura dos dados durante as operações, mantendo-os protegidos.
-4. Esquemas de FHE
+4. **Esquemas de FHE:**
    * Em FHE, os esquemas referem-se a modelos específicos que utilizam diferentes métodos matemáticos para implementar a criptografia homomórfica. Esses esquemas são essenciais para permitir que operações sejam realizadas sobre dados criptografados. Os mais conhecidos e utilizados incluem:
      * Brakerski/Fan-Vercauteren (BFV) e Brakerski-Gentry-Vaikuntanathan (BGV):
        * Esquemas utilizados para operações com números inteiros.
@@ -44,7 +46,7 @@ Antes de nos aprofundarmos em mais detalhes sobre a criptografia totalmente homo
        * O CKKS é particularmente útil para operações de aritmética aproximada, o que o torna adequado para aplicações em aprendizado de máquina e análise de dados.
      * Fast Fully Homomorphic Encryption Library over the Torus (TFHE):
        * A biblioteca TFHE implementa um bootstrapping porta a porta muito rápido.
-5. Bootstraping
+5. **Bootstraping:**
    * Na criptografia totalmente homomórfica (FHE), o conceito de bootstrapping desempenha um papel crucial. O principal uso do bootstrapping é converter um texto cifrado esgotado em um texto cifrado atualizado "equivalente". Para entender melhor essa função, é importante conhecer alguns detalhes sobre os textos cifrados e o ruído acumulado durante as operações.
      1. **Texto Cifrado Esgotado**:
         * Quando se realizam operações homomórficas em textos cifrados, cada operação adiciona um certo nível de ruído ao texto cifrado. Após várias operações, o ruído acumulado pode se tornar tão alto que o texto cifrado se torna inutilizável para futuras operações adicionais. Esse estado é conhecido como texto cifrado esgotado.
@@ -55,7 +57,7 @@ Antes de nos aprofundarmos em mais detalhes sobre a criptografia totalmente homo
 
 Esses pontos formam a base para entender como a FHE funciona e como ela pode ser aplicada em diversas áreas para proteger a privacidade e a segurança dos dados.
 
-### Requisitos
+## Requisitos
 
 Para melhor aproveitamento deste "manual", recomenda-se conhecimento prévio em:
 
